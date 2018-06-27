@@ -1,5 +1,6 @@
 package me.fjdevel.reconocimientodeplacas;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
                             .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
                     return true;
                 case R.id.navigation_camera:
+                    Intent intentFoto = new Intent(getBaseContext(),Foto2Activity.class);
+                    startActivity(intentFoto);
                     return true;
             }
             return false;
