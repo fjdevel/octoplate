@@ -25,10 +25,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Ingrese el numero tal como esta en la placa"
+                    android:id="@+id/etplaca"
                     />
                 <android.support.v7.widget.AppCompatButton
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
+                    android:id="@+id/btnregistar"
                     android:text="Registrar"
                     />
             </LinearLayout>
@@ -45,25 +47,25 @@
                     android:text="Listado de placas con reporte de robo"/>
                 <ListView
                     android:layout_width="wrap_content"
-                    android:layout_height="150dp"
+                    android:layout_height="200dp"
                     android:id="@+id/listaplacasrobadas"
                     ></ListView>
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Listado de placas con reporte de robo"/>
-                <ListView
-                    android:layout_width="wrap_content"
-                    android:layout_height="150dp"
-                    android:id="@+id/listaplacasanalizadas"
-                    ></ListView>
-            </LinearLayout>
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="vertical">-->
+                <!--<TextView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Listado de placas con reporte de robo"/>-->
+                <!--<ListView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="150dp"-->
+                    <!--android:id="@+id/listaplacasanalizadas"-->
+                    <!--&gt;</ListView>-->
+            <!--</LinearLayout>-->
         </LinearLayout>
     </ScrollView>
 
