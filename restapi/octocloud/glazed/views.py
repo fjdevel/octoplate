@@ -5,8 +5,8 @@ import json
 import requests
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .serializers import ImageUploadSerializer
-from .models import ImageUpload
+from .serializers import ImageUploadSerializer,PlacaSerializer
+from .models import ImageUpload,Placa
 from rest_framework import viewsets
 from rest_framework.decorators import action
 
@@ -27,3 +27,7 @@ class ProcesarPlaca(viewsets.ModelViewSet):
 		r = requests.post(url, data = img_base64)
 		response = r.json() 
 		return Response(response)
+
+class ViewSetPlacas(viewsets.ModelViewSet):
+	queryset = Placa.objects.all()
+	serializer_class = PlacaSerializer
