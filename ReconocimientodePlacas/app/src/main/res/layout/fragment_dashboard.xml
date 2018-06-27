@@ -27,6 +27,12 @@
                     android:hint="Ingrese el numero tal como esta en la placa"
                     android:id="@+id/etplaca"
                     />
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tiene reporte de robo?"
+                    android:id="@+id/reportederobo"
+                    />
                 <android.support.v7.widget.AppCompatButton
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"

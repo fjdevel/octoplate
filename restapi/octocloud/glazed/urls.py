@@ -33,6 +33,6 @@ placacrud = ViewSetPlacas.as_view({
 	})
 urlpatterns = [
 	path('subirimagen',placalist,name='subida'),
-	path('obtenerplaca/<int:id>/',placaprocesamiento,name='procesamiento'),
+	path('obtenerplaca/<identificador>/',placaprocesamiento,name='procesamiento'),
 	path('placa/',placacrud,name='placacrud'),
 ]

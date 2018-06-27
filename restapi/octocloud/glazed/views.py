@@ -18,8 +18,8 @@ class ProcesarPlaca(viewsets.ModelViewSet):
 	serializer_class = ImageUploadSerializer
 
 	@action(detail=True)
-	def obtenerPlaca(request, *args, **kwargs):
-		imagen = ImageUpload.objects.get() 
+	def obtenerPlaca(self,request,identificador,*arg,**kwargs):
+		imagen = ImageUpload.objects.get(id=identificador) 
 		with open(imagen.datafile.url, 'rb') as image_file:
 			img_base64 = base64.b64encode(image_file.read())
 

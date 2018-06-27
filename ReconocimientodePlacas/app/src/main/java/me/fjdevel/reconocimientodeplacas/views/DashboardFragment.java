@@ -4,6 +4,7 @@ package me.fjdevel.reconocimientodeplacas.views;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.AppCompatButton;
+import android.support.v7.widget.AppCompatCheckBox;
 import android.support.v7.widget.AppCompatEditText;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,7 +43,8 @@ public class DashboardFragment extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
         final ListView listaplacasregistradas = view.findViewById(R.id.listaplacasrobadas);
         AppCompatButton btnregistrar = view.findViewById(R.id.btnregistar);
-        final AppCompatEditText placa = view.findViewById(R.id.etplaca);
+        final AppCompatCheckBox reportecheck = view.findViewById(R.id.reportederobo);
+        final AppCompatEditText placa =  view.findViewById(R.id.etplaca);
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://192.168.0.14:8000/api/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -66,7 +68,11 @@ public class DashboardFragment extends Fragment {
         btnregistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view) {
-                Call call = glazedAPI.registrarPlaca(placa.getText().toString());
+                Boolean reporte=Boolean.FALSE;
+                if (reportecheck.isChecked()){
+                    reporte = Boolean.TRUE;
+                }
+                Call call = glazedAPI.registrarPlaca(placa.getText().toString(),reporte);
                 call.enqueue(new Callback() {
                     @Override
                     public void onResponse(Call call, Response response) {
